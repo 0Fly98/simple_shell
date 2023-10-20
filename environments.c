@@ -183,7 +183,7 @@ int alias_func(char **args, int to_free)
 	args++;
 
 	if (*args == NULL)
-		return (prints_alias(head.next));
+		return (print_aliases(head.next));
 
 	while (*args != NULL)
 	{

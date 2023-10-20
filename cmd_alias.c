@@ -52,11 +52,12 @@ int check_alias(char **args, alias *alias_ptr)
  *
  * Return: SKIP_FORK
  */
-int print_aliases_value(alias *alias_ptr)
+int print_aliases(alias *alias_ptr)
 {
 	while (alias_ptr != NULL)
 	{
-		write(STDOUT_FILENO, alias_ptr->name, _strlen(alias_ptr->name));
+		write(STDOUT_FILENO, alias_ptr->name, 
+				_strlen(alias_ptr->name));
 		write(STDOUT_FILENO, "=\'", 2);
 		write(STDOUT_FILENO, alias_ptr->value,
 		      _strlen(alias_ptr->value));

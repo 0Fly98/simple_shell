@@ -21,11 +21,6 @@
 #define SKIP_FORK 6
 #define DO_EXECVE 7
 
-/*Global variables*/
-extern int status;
-extern int line_num;
-extern char *shell_name;
-
 /**
  * struct Alias - singly linked list
  * @name: name of alias
@@ -39,9 +34,14 @@ typedef struct Alias
 	struct Alias *next;
 } alias;
 
-int _atoi(char *st);
-char *_itoa(int val);
+/*Global variables*/
+extern int status;
+extern int line_num;
+extern char *shell_name;
 extern char **environ;
+
+int _atoi(char *st);
+char *_itoa(int val); 
 void message_err(char *arg0, char *arg1);
 int err_check(char *ptr);
 char *input_path(char *old_buffer, size_t *o_size);
@@ -70,7 +70,7 @@ int built_ins(char **args);
 int and_or(char **args, char opr, int comp_last);
 char *check_command(char **args);
 int execute_command(char **args);
-int prints_alias(char *arg, alias *alias_ptr)
+/*int print_alias(char *arg, alias *alias_ptr)*/
 int free_array(char **args);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
